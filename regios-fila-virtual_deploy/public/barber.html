@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel del Barbero | Regios Studio</title>
+  <link rel="icon" href="images/cartel.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/barber.css">
+  <style>
+    .estado-punto {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      margin-left: 8px;
+      background-color: gray;
+      vertical-align: middle;
+    }
+    .estado-punto.abierto {
+      background-color: #28a745; /* verde */
+      box-shadow: 0 0 10px #28a745;
+    }
+    .estado-punto.cerrado {
+      background-color: #dc3545; /* rojo */
+      box-shadow: 0 0 10px #dc3545;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <nav class="navbar navbar-light bg-white shadow-sm">
+    <div class="container">
+      <h1 class="h4 mb-0">Panel del Barbero
+        <span id="estadoPunto" class="estado-punto"></span>
+      </h1>
+    </div>
+  </nav>
+
+ <div class="container py-5 text-center">
+  <h2 class="fw-bold mb-4">Control de Barbería</h2>
+  <p class="text-muted mb-4">Cambia el estado del local en tiempo real.</p>
+
+  <div class="d-flex justify-content-center gap-3 mb-5">
+    <button id="btnAbrir" class="btn btn-success btn-lg px-4">Abrir Local</button>
+    <button id="btnCerrar" class="btn btn-danger btn-lg px-4">Cerrar Local</button>
+  </div>
+
+  <hr class="my-4">
+
+  <h4 class="fw-bold mb-3">Filas en tiempo real</h4>
+  <div class="row justify-content-center" id="filasContainer">
+    <div class="col-md-5">
+      <div class="card shadow-sm p-3 mb-4">
+        <h5 class="fw-bold">Gabi</h5>
+        <div id="filaGabi" class="d-flex flex-column gap-2 text-start"></div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="card shadow-sm p-3 mb-4">
+        <h5 class="fw-bold">Rolly</h5>
+        <div id="filaRolly" class="d-flex flex-column gap-2 text-start"></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-4">
+
+  <h4 class="fw-bold mb-3">Verificar código del cliente</h4>
+  <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+    <input type="text" id="codigoInput" class="form-control w-25 text-center fs-5" placeholder="Ingresá código">
+    <button id="verificarBtn" class="btn btn-dark">Verificar</button>
+  </div>
+  <div id="resultadoVerificacion" class="fw-bold fs-5 mt-2"></div>
+
+  <div class="mt-5">
+    <a href="index.html" class="btn btn-outline-dark">Volver al sitio principal</a>
+  </div>
+</div>
+
+
+  <!-- Firebase y Script principal -->
+  <script type="module" src="js/barber.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+/* -------------------------
+   ESTILO GLOBAL
+------------------------- */
+body {
+  background-color: #f8f9fa;
+  color: #2d2d2d;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 0.1px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+p, span {
+  color: #555;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* -------------------------
+   NAVBAR
+------------------------- */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand img {
+  height: 45px;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15));
+}
+
+.nav-link {
+  font-weight: 500;
+  margin: 0 8px;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* -------------------------
+   HERO / CARRUSEL
+------------------------- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.92);
+  transition: transform 7s ease;
+}
+
+.carousel-item.active img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hero { height: 320px; }
+}
+
+/* -------------------------
+   SECCIONES
+------------------------- */
+section {
+  padding: 80px 0;
+}
+
+section h2 {
+  font-size: 1.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.bg-light {
+  background-color: #fdfdfd !important;
+}
+
+/* -------------------------
+   TARJETAS BARBEROS
+------------------------- */
+.card {
+  border: none;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+.card img {
+  height: 260px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.card-title {
+  font-weight: 700;
+  color: #222;
+}
+
+.card .text-muted {
+  color: #6c757d !important;
+}
+
+.btn {
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.btn-dark:hover {
+  background-color: #111;
+  transform: translateY(-2px);
+}
+
+/* -------------------------
+   BENEFICIOS (TARJETA RS)
+------------------------- */
+#tarjetaCliente {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.beneficio {
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #f3f3f3, #fefefe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: #2a2a2a;
+  letter-spacing: -0.5px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.beneficio:hover {
+  background: linear-gradient(145deg, #000, #3a3a3a);
+  color: #fff;
+  transform: scale(1.12);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.beneficio.activo {
+  background: radial-gradient(circle at top left, #000 0%, #222 90%);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.35);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* efecto brillo en activo */
+.beneficio.activo::after {
+  content: "";
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  animation: brillo 2s infinite linear;
+}
+
+@keyframes brillo {
+  0% { transform: scale(0.9) rotate(0deg); opacity: 0.4; }
+  50% { transform: scale(1.1) rotate(180deg); opacity: 0.2; }
+  100% { transform: scale(0.9) rotate(360deg); opacity: 0.4; }
+}
+
+/* -------------------------
+   MODAL PERFIL
+------------------------- */
+.modal-content {
+  border-radius: 18px;
+  background: #ffffffc7;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.modal-body img {
+  border-radius: 50%;
+  border: 3px solid #eee;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+#btnGoogleLogin {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+#btnGoogleLogin:hover {
+  background-color: #f7f7f7;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+
+/* -------------------------
+   FOOTER
+------------------------- */
+footer {
+  background-color: #111;
+  color: #bbb;
+  font-size: 0.9rem;
+  letter-spacing: 0.4px;
+}
+
+footer a {
+  color: #fff;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+footer a:hover {
+  opacity: 1;
+}
+
+/* -------------------------
+   BOTÓN IR AL MENÚ
+------------------------- */
+#btnIrMenu {
+  border: 1px solid #ccc;
+  color: #333;
+  background-color: #fff;
+  transition: all 0.25s ease;
+}
+
+#btnIrMenu:hover {
+  background-color: #f3f3f3;
+  transform: translateY(-1px);
+}
+
+/* -------------------------
+   ESTADO LOCAL (punto verde/rojo)
+------------------------- */
+.estado-punto {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 8px;
+  border-radius: 50%;
+  background-color: gray;
+  animation: parpadeo 1s infinite;
+}
+
+.estado-punto.abierto {
+  background-color: #4caf50;
+  box-shadow: 0 0 8px #4caf50;
+}
+
+.estado-punto.cerrado {
+  background-color: #e74c3c;
+  box-shadow: 0 0 8px #e74c3c;
+}
+
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}

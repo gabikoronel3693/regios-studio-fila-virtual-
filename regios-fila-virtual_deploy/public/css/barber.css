@@ -1,0 +1,80 @@
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.estado-punto {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: 8px;
+  border-radius: 50%;
+  background-color: gray;
+  animation: parpadeo 1s infinite;
+}
+
+.estado-punto.abierto {
+  background-color: #4caf50;
+  box-shadow: 0 0 8px #4caf50;
+}
+
+.estado-punto.cerrado {
+  background-color: #e74c3c;
+  box-shadow: 0 0 8px #e74c3c;
+}
+
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.btn-lg {
+  border-radius: 12px;
+  font-weight: 600;
+}
+.estado-punto.abierto {
+  background-color: #28a745;
+}
+.estado-punto.cerrado {
+  background-color: #dc3545;
+}
+
+.tarjeta-turno {
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 12px;
+  background-color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.tarjeta-turno .rs {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: #000;
+}
+.tarjeta-turno .codigo {
+  font-size: 1rem;
+  color: #555;
+}
+.beneficio {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  background-color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #222;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.beneficio.activo {
+  background-color: #222;
+  color: #fff;
+  transform: scale(1.05);
+}
